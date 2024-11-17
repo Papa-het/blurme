@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Blurme",
+  "version": "1.0.0",
+  "action": { "default_popup": "index.html" },
+  "background": {
+    "service_worker": "src/scripts/background.ts"
+  },
+  "permissions": ["tabs", "scripting", "storage"],
+  "content_scripts": [
+    {
+      "js": ["src/scripts/content.ts"],
+      "matches": ["https://web.telegram.org/*"]
+    }
+  ]
+}
